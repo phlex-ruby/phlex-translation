@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
 	spec.name = "phlex-translation"
-	spec.version = "0.0.1"
+	spec.version = "0.1.0"
 	spec.authors = ["Joel Drapper"]
 	spec.email = ["joel@drapper.me"]
 
@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 	spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
 	spec.require_paths = ["lib"]
 
-	spec.add_dependency "phlex", "~> 0.5"
+	spec.add_dependency "phlex", ">= 0.5"
 	spec.add_dependency "i18n", "~> 1.12"
 
 	spec.metadata["rubygems_mfa_required"] = "true"
