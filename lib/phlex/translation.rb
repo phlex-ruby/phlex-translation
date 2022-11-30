@@ -10,8 +10,15 @@ module Phlex
 			attr_writer :translation_path
 
 			def translation_path
-				@translation_path ||= name&.split("::")&.join(".")&.downcase.to_s
-			end
+        @translation_path ||= name
+                                &.split("::")
+                                &.join(".")
+                                &.gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2')
+                                &.gsub(/([a-z\d])([A-Z])/,'\1_\2')
+                                &.tr("-", "_")
+                                &.downcase.to_s
+      end
+
 		end
 
 		def translate(key, **options)

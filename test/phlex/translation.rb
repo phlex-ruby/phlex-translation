@@ -49,7 +49,13 @@ describe Phlex::Translation do
 			it "returns I18n scope using class anme" do
 				expect(Views::Articles::Form.translation_path).to be == "views.articles.form"
 			end
-		end
+    end
+
+    with "a class name with a multiple word class or module name" do
+      it "converts the names to snake case" do
+        expect(Views::Articles::OtherForm.translation_path).to be == "views.articles.other_form"
+      end
+    end
 
 		with "invalid class_name" do
 			it "returns empty string" do
